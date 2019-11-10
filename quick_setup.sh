@@ -19,9 +19,9 @@ echo "
 30 23 * * * root shutdown -h now
 " >> /etc/crontab
 
-echo 'Changing Proxmox subscription (only valid for stretch)'
+echo 'Changing Proxmox subscription (only valid for buster)'
 cd /etc/apt/sources.list.d/
 
 sed -i 's/deb/#deb/' pve-enterprise.list
 
-echo 'deb http://download.proxmox.com/debian/pve stretch pve-no-subscription' > pve-no-subscription.list
+echo 'deb http://download.proxmox.com/debian/pve buster pve-no-subscription' > pve-no-subscription.list
