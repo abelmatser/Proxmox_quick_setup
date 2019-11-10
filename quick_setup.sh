@@ -2,6 +2,7 @@
 
 echo 'Changing HandleLidSwitch'
 sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/' /etc/systemd/logind.conf
+service systemd-logind restart
 
 echo 'Configuring Wake on Lan'
 apt install ethtool
