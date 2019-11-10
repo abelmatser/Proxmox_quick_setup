@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo 'Changing HandleLidSwitch'
-sed 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/' /etc/systemd/logind.conf
+sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/' /etc/systemd/logind.conf
 
 echo 'Configuring Wake on Lan'
 apt install ethtool
@@ -21,6 +21,6 @@ echo "
 echo 'Changing Proxmox subscription (only valid for stretch)'
 cd /etc/apt/sources.list.d/
 
-sed 's/deb/#deb/' pve-enterprise.list
+sed -i 's/deb/#deb/' pve-enterprise.list
 
 echo 'deb http://download.proxmox.com/debian/pve stretch pve-no-subscription' > pve-no-subscription.list
